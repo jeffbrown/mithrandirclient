@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: mithrandirclient
+---
+testFramework: junit
+sourceLanguage: java
