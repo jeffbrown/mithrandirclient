@@ -2,6 +2,7 @@ package mithrandirclient;
 
 import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
+import io.reactivex.Flowable;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -13,10 +14,10 @@ public class TestClient {
     @Client("http://localhost:8086")
     RxHttpClient httpClient;
 
-    public String getRandomName(){
+    public Flowable<String> getRandomName(){
 
         System.out.println("getRandomName invoked => " + httpClient);
 
-        return "Some Random Name";
+        return Flowable.just("Some Random Name");
     }
 }

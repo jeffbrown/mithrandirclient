@@ -2,7 +2,7 @@ package mithrandirclient;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.http.HttpStatus;
+import io.reactivex.Flowable;
 
 @Controller("/demo")
 public class DemoController {
@@ -14,7 +14,7 @@ public class DemoController {
     }
 
     @Get("/")
-    public String index() {
+    public Flowable<String> index() {
         return testClient.getRandomName();
     }
 }
